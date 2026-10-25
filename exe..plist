@@ -1,1 +1,15 @@
-hdiutil create -size 100m -fs HFS+ -volname "MyAppInstaller" -ov tmp.dmg
+<?xml version="1.0" encoding="utf-8"?>
+<installer-gui-script minSpecVersion="1">
+    <title>マイアプリ インストーラー</title>
+    <!-- ライセンス契約書や背景画像の指定 -->
+    <license file="license.txt" />
+    <welcome file="welcome.html" />
+    <!-- インストールする中身のパッケージ指定 -->
+    <choices-outline>
+        <line choice="default"/>
+    </choices-outline>
+    <choice id="default" visible="true" title="MyApp">
+        <pkg-ref id="com.example.myapp"/>
+    </choice>
+    <pkg-ref id="com.example.myapp" version="1.0" onConclusion="none">myapp.pkg</pkg-ref>
+</installer-gui-script>
