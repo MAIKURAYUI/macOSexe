@@ -3,25 +3,22 @@
 <plist version="1.0">
 <array>
     <dict>
-        <!-- インストールするアプリの識別子 -->
-        <key>BundleHasStrictIdentifier</key>
-        <true/>
-        
-        <!-- アプリの識別名（Bundle ID） -->
+        <!-- アプリ（.app）の相対パス -->
         <key>RootRelativeBundlePath</key>
         <string>MyApp.app</string>
         
-        <!-- インストール後の動作設定（例：上書きを許可するか） -->
-        <key>BundleIsVersionChecked</key>
-        <true/>
+        <!-- 🔴 再起動を必要としない設定 -->
+        <key>BundleIsRequiredRestart</key>
+        <false/>
         
-        <!-- インストール後にMacの再起動が必要か (NoRestart / HomeRestart / LogoutRestart) -->
+        <!-- 既存の古いバージョンがある場合はアップグレード（上書き）する -->
         <key>BundleOverwriteAction</key>
         <string>upgrade</string>
         
-        <!-- アプリのバージョン番号 -->
-        <key>BundlePreInstallScriptPath</key>
-        <string>preinstall</string>
+        <key>BundleHasStrictIdentifier</key>
+        <true/>
+        <key>BundleIsVersionChecked</key>
+        <true/>
     </dict>
 </array>
 </plist>
